@@ -1,0 +1,39 @@
+connect_printer: Establishes a serial connection to the 3D printer using a specified COM port and baud rate.
+
+disconnect_printer: Safely severs the active serial connection between the computer and the 3D printer.
+
+get_printer_status: Checks whether the printer is currently online, offline, printing, idle, or paused.
+
+get_hardware_info: Sends M115 to retrieve the printer's firmware version, machine type, and active connection settings.
+
+run_diagnostics: Runs M105 and M119 to check for broken thermistors and jammed or broken physical limit switches.
+
+send_raw_gcode: Allows the AI to send any manual G-code command directly to the printer's terminal.
+
+load_gcode_file: Loads a local .gcode file into the print queue without actually starting the print job.
+
+start_print: Begins executing the G-code file that is currently loaded in the print queue.
+
+pause_print: Temporarily halts the active print job so you can change filament or check the first layer.
+
+resume_print: Un-pauses the printer and continues the currently paused print job from where it left off.
+
+cancel_print: Permanently aborts the active or paused print job and clears the current queue.
+
+get_print_progress: Calculates and returns the completion percentage of the currently active print job.
+
+set_temperatures: Sends M104 and M140 to heat up or cool down the nozzle and heated bed to specific target temperatures.
+
+get_temperatures: Sends M105 to read the exact, real-time current temperatures of the nozzle and heated bed.
+
+move_printhead: Sends G0 commands to jog the printhead to specific X, Y, and Z coordinates.
+
+home_axes: Sends G28 to find the physical zero-point of the machine, safely lifting the Z-axis 5mm first to prevent bed scratching.
+
+extrude_filament: Sends G1 E commands to push plastic out of the heated nozzle or retract it back in.
+
+list_sd_files: Sends M20 and listens to the terminal to list all printable files stored on the printer's SD card.
+
+upload_to_sd: A placeholder tool for transferring local G-code files directly onto the printer's SD card.
+
+print_from_sd: Sends M23 and M24 to select a specific file on the SD card and commands the printer to print it natively.
